@@ -10,7 +10,7 @@ const createBooks=async (req, res) => {
         const savedBook = await newBook.save();
         res.json(savedBook);
     } catch (error) {
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json(error);
     }
 }
 
@@ -50,7 +50,7 @@ const borrowBook=  async (req, res) => {
 
         res.json({ message: 'Book borrowed successfully' });
     } catch (error) {
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json(error);
     }
 }
 
